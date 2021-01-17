@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form th:action="@{/search}" method="post">
+    Filter: <input type="text" name="keyword" id="keyword" size="50" th:value="${keyword}" required />
+    &nbsp;
+    <input type="submit" value="Search" />
+</form>
+
+</body>
+</html>

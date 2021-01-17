@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Search Results</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<form th:action="@{/search}" method="post">
+    Filter: <input type="text" name="keyword" id="keyword" size="50" th:value="${keyword}" required />
+    &nbsp;
+    <input type="submit" value="Search" />
+</form>
+<br>
+<table class="table table-bordered">
+
+	<tr th:each="each_search_result : ${searchResults}">
+		<td th:text="${each_search_result.title}"></td>
+		<td th:text="${each_search_result.description}"></td>
+		<td>
+		   <a th:href="${each_search_result.url}">LINK</a>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>
